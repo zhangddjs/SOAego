@@ -17,5 +17,10 @@
             <groupId>distribute</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <artifactId>ego-commons</artifactId>
+            <groupId>distribute</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

@@ -17,10 +17,10 @@
     <!-- 加载属性文件 -->
     <context:property-placeholder location="classpath:db.properties"/>
     <!-- 数据源 -->
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-    	<property name="driverClassName" value="${jdbc.driver}"></property>
-    	<property name="url" value="${jdbc.url}"></property>
-    	<property name="username" value="${jdbc.username}"></property>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+    	<property name="driverClass" value="${jdbc.driver}"></property>
+    	<property name="jdbcUrl" value="${jdbc.url}"></property>
+    	<property name="user" value="${jdbc.username}"></property>
     	<property name="password" value="${jdbc.password}"></property>
     </bean>
     <!-- SqlSessionFactory -->
@@ -31,7 +31,7 @@
     </bean>
     <!-- 扫描器 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    	<property name="basePackage" value="com.ego.mapper"></property>
+    	<property name="basePackage" value="com.ego.dao"></property>
     	<property name="sqlSessionFactoryBeanName" value="factory"></property>
     </bean>
     <!-- 事务管理器 -->

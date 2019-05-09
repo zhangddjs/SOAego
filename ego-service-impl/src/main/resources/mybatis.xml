@@ -4,9 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<plugins>
-		<plugin interceptor="com.github.pagehelper.PageHelper">
+		<!--<plugin interceptor="com.github.pagehelper.PageHelper">-->
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
 			<!-- 告诉分页插件是哪个数据库 -->
-			<property name="dialect" value="mysql"/>
+			<!--<property name="dialect" value="mysql"/>-->
 		</plugin>
 	</plugins>
 </configuration>
