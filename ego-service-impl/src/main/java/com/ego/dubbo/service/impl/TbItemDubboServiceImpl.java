@@ -41,4 +41,10 @@ public class TbItemDubboServiceImpl implements TbItemDubboService {
         dataGrid.setTotal(pi.getTotal());
         return dataGrid;
     }
+
+    @Override
+    public int updItemStatus(TbItem tbItem) {
+        //为null的不操作
+        return tbItemMapper.updateByPrimaryKeySelective(tbItem);
+    }
 }
