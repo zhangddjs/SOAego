@@ -14,8 +14,5 @@
         <module name="generator" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ego-manage" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>

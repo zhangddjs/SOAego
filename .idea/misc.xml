@@ -10,13 +10,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/ego-manage/pom.xml" />
-        <option value="$PROJECT_DIR$/ego-parent/pom.xml" />
-        <option value="$PROJECT_DIR$/ego-pojo/ego-service/pom.xml" />
-      </set>
-    </option>
   </component>
   <component name="ProjectResources">
     <resource url="http://code.alibabatech.com/schema/dubbo/dubbo.xsd" location="$PROJECT_DIR$" />

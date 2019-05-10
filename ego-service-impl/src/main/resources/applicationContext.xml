@@ -13,30 +13,31 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd" default-autowire="byName">
     <!-- 注解扫描 -->
-    <context:component-scan base-package="com.ego.dubbo.service.impl"></context:component-scan>
+    <context:component-scan base-package="com.ego.dubbo.service.impl" />
     <!-- 加载属性文件 -->
     <context:property-placeholder location="classpath:db.properties"/>
     <!-- 数据源 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-    	<property name="driverClass" value="${jdbc.driver}"></property>
-    	<property name="jdbcUrl" value="${jdbc.url}"></property>
-    	<property name="user" value="${jdbc.username}"></property>
-    	<property name="password" value="${jdbc.password}"></property>
+    	<property name="driverClass" value="${jdbc.driver}" />
+    	<property name="jdbcUrl" value="${jdbc.url}" />
+    	<property name="user" value="${jdbc.username}" />
+    	<property name="password" value="${jdbc.password}" />
     </bean>
     <!-- SqlSessionFactory -->
     <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
-    	<property name="dataSource" ref="dataSource"></property>
-    	<property name="typeAliasesPackage" value="com.ego.pojo"></property>
-    	<property name="configLocation" value="classpath:mybatis.xml"></property>
+    	<property name="dataSource" ref="dataSource" />
+    	<property name="typeAliasesPackage" value="com.ego.pojo" />
+    	<property name="configLocation" value="classpath:mybatis.xml" />
+		<property name="mapperLocations" value="classpath:mapper/*.xml" />
     </bean>
     <!-- 扫描器 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    	<property name="basePackage" value="com.ego.dao"></property>
-    	<property name="sqlSessionFactoryBeanName" value="factory"></property>
+    	<property name="basePackage" value="com.ego.dao" />
+    	<property name="sqlSessionFactoryBeanName" value="factory" />
     </bean>
     <!-- 事务管理器 -->
     <bean id="txManage" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-    	<property name="dataSource" ref="dataSource"></property>
+    	<property name="dataSource" ref="dataSource" />
     </bean>
     <!-- 声明式事务 -->
     <tx:advice id="txAdvice" transaction-manager="txManage">

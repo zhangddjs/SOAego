@@ -22,13 +22,15 @@ public class TbItemDubboServiceImpl implements TbItemDubboService {
 
     @Override
     public EasyUIDataGrid show(int page, int rows) {
+        //分页代码
+        //设置分页条件
+        System.out.println("cccccc");
+
+        PageHelper.startPage(page, rows);
 
         //查询全部
         List<TbItem> list = tbItemMapper.selectByExample(new TbItemExample());
 
-        //分页代码
-        //设置分页条件
-        PageHelper.startPage(page, rows);
 
         PageInfo<TbItem> pi = new PageInfo<>(list);
         //此时分页插件生效，pi中包含所有分页相关信息。
@@ -37,7 +39,6 @@ public class TbItemDubboServiceImpl implements TbItemDubboService {
         EasyUIDataGrid dataGrid = new EasyUIDataGrid();
         dataGrid.setRows(pi.getList());
         dataGrid.setTotal(pi.getTotal());
-
         return dataGrid;
     }
 }
