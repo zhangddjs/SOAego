@@ -14,4 +14,12 @@ public interface TbItemService {
      * @return
      */
     EasyUIDataGrid show(int page, int rows);
+
+    /**
+     * 批量修改商品状态
+     * @param ids
+     * @param status
+     * @return
+     */
+    int update(String ids, byte status);
 }
