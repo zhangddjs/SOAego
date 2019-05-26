@@ -42,6 +42,7 @@
         <zkClient-version>0.10</zkClient-version>
         <tomcat-version>2.2</tomcat-version>
         <pagehelper-version>5.1.8</pagehelper-version>
+        <ftpclient-version>3.3</ftpclient-version>
     </properties>
 
     <!--<dependencyManagement>-->
@@ -197,6 +198,21 @@
             <artifactId>zkclient</artifactId>
             <version>${zkClient-version}</version>
         </dependency>
+
+        <!--ftp-->
+        <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>${ftpclient-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+
     </dependencies>
     <!--</dependencyManagement>-->
 
