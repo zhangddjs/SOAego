@@ -43,8 +43,9 @@ public class TbItemServiceImpl implements TbItemService {
     }
 
     @Override
-    public int save(TbItem item, String desc) {
-        long id = IDUtils.genItemId();      //随机生成id
+    public int save(TbItem item, String desc) throws Exception {
+        //不考虑事务回滚
+/*        long id = IDUtils.genItemId();      //随机生成id
         item.setId(id);
         Date date = new Date();
         item.setCreated(date);
@@ -62,7 +63,22 @@ public class TbItemServiceImpl implements TbItemService {
         if (index == 2){
             return 1;
         }
-        return 0;
+*/
+        //调用dubbo中考虑事务回滚功能方法
+        long id = IDUtils.genItemId();      //随机生成id
+        item.setId(id);
+        Date date = new Date();
+        item.setCreated(date);
+        item.setUpdated(date);
+        item.setStatus((byte) 1);
+        TbItemDesc itemDesc = new TbItemDesc();
+        itemDesc.setItemDesc(desc);
+        itemDesc.setItemId(id);
+        itemDesc.setCreated(date);
+        itemDesc.setUpdated(date);
+        int index = 0;
+        index = tbItemDubboServiceImpl.insTbItemDesc(item, itemDesc);
+        return index;
     }
 
 }
