@@ -47,4 +47,9 @@ public class TbItemDubboServiceImpl implements TbItemDubboService {
         //为null的不操作
         return tbItemMapper.updateByPrimaryKeySelective(tbItem);
     }
+
+    @Override
+    public int insTbItem(TbItem tbItem) {
+        return tbItemMapper.insert(tbItem);
+    }
 }

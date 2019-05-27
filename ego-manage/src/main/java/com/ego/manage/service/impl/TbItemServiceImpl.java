@@ -2,11 +2,14 @@ package com.ego.manage.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.ego.commons.pojo.EasyUIDataGrid;
+import com.ego.dubbo.service.TbItemDescDubboService;
 import com.ego.dubbo.service.TbItemDubboService;
 import com.ego.manage.service.TbItemService;
 import com.ego.pojo.TbItem;
+import com.ego.pojo.TbItemDesc;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 
 /**
  * @author zdd
@@ -16,6 +19,8 @@ import org.springframework.stereotype.Service;
 public class TbItemServiceImpl implements TbItemService {
     @Reference
     private TbItemDubboService tbItemDubboServiceImpl;
+    @Reference
+    private TbItemDescDubboService tbItemDescDubboServiceImpl;
     @Override
     public EasyUIDataGrid show(int page, int rows) {
         System.out.println("bbbbbb");
@@ -33,6 +38,29 @@ public class TbItemServiceImpl implements TbItemService {
         }
         if(index == idsStr.length)
             return 1;
+        return 0;
+    }
+
+    @Override
+    public int save(TbItem item, String desc) {
+        long id = IDUtils.genItemId();      //随机生成id
+        item.setId(id);
+        Date date = new Date();
+        item.setCreated(date);
+        item.setUpdated(date);
+        item.setStatus((byte) 1);
+        int index = tbItemDubboServiceImpl.insTbItem(item);
+        if(index > 0) {     //添加描述,如果下面失败，上面成功，则不具备回滚功能
+            TbItemDesc itemDesc = new TbItemDesc();
+            itemDesc.setItemDesc(desc);
+            itemDesc.setItemId(id);
+            itemDesc.setCreated(date);
+            itemDesc.setUpdated(date);
+            index += tbItemDescDubboServiceImpl.insDesc(itemDesc);
+        }
+        if (index == 2){
+            return 1;
+        }
         return 0;
     }
 

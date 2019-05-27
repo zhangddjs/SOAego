@@ -20,8 +20,12 @@
 	<dubbo:service interface="com.ego.dubbo.service.TbItemDubboService" ref="tbItemDubboServiceImpl" />
 	<bean id="tbItemDubboServiceImpl" class="com.ego.dubbo.service.impl.TbItemDubboServiceImpl" />
 	<!--商品类目服务-->
-	<dubbo:service interface="com.ego.dubbo.service.TbItemCatDubboService" ref="TbItemCatDubboServiceImpl" />
-	<bean id="TbItemCatDubboServiceImpl" class="com.ego.dubbo.service.impl.TbItemCatDubboServiceImpl" />
+	<dubbo:service interface="com.ego.dubbo.service.TbItemCatDubboService" ref="tbItemCatDubboServiceImpl" />
+	<bean id="tbItemCatDubboServiceImpl" class="com.ego.dubbo.service.impl.TbItemCatDubboServiceImpl" />
+	<!--商品描述-->
+	<dubbo:service interface="com.ego.dubbo.service.TbItemDescDubboService" ref="tbItemDescDubboServiceImpl" />
+	<bean id="tbItemDescDubboServiceImpl" class="com.ego.dubbo.service.impl.TbItemDescDubboServiceImpl" />
+
 	<import resource="../../applicationContext.xml" />
 </beans>
 

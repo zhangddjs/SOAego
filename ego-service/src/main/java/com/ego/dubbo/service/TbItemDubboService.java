@@ -22,4 +22,11 @@ public interface TbItemDubboService {
      * @return
      */
     int updItemStatus(TbItem tbItem);
+
+    /**
+     * 商品新增
+     * @param tbItem
+     * @return
+     */
+    int insTbItem(TbItem tbItem);
 }
