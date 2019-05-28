@@ -22,4 +22,9 @@ public class TbItemCatDubboServiceImpl implements TbItemCatDubboService {
         example.createCriteria().andParentIdEqualTo(pid);
         return tbItemCatMapper.selectByExample(example);
     }
+
+    @Override
+    public TbItemCat selById(long id) {
+        return tbItemCatMapper.selectByPrimaryKey(id);
+    }
 }

@@ -68,7 +68,11 @@
             				$.messager.alert('提示','删除商品规格成功!',undefined,function(){
             					$("#itemParamList").datagrid("reload");
             				});
-            			}
+            			}else{
+                            $.messager.alert('提示','删除商品规格失败!<br/>' + data.data,undefined,function(){
+                                $("#itemParamList").datagrid("reload");
+                            });
+                        }
             		});
         	    }
         	});

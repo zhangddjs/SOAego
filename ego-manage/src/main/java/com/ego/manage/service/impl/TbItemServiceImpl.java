@@ -8,6 +8,8 @@ import com.ego.dubbo.service.TbItemDubboService;
 import com.ego.manage.service.TbItemService;
 import com.ego.pojo.TbItem;
 import com.ego.pojo.TbItemDesc;
+import com.ego.pojo.TbItemParam;
+import com.ego.pojo.TbItemParamItem;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -43,7 +45,7 @@ public class TbItemServiceImpl implements TbItemService {
     }
 
     @Override
-    public int save(TbItem item, String desc) throws Exception {
+    public int save(TbItem item, String desc, String itemParams) throws Exception {
         //不考虑事务回滚
 /*        long id = IDUtils.genItemId();      //随机生成id
         item.setId(id);
@@ -76,8 +78,15 @@ public class TbItemServiceImpl implements TbItemService {
         itemDesc.setItemId(id);
         itemDesc.setCreated(date);
         itemDesc.setUpdated(date);
+
+        TbItemParamItem paramItem = new TbItemParamItem();
+        paramItem.setCreated(date);
+        paramItem.setUpdated(date);
+        paramItem.setItemId(id);
+        paramItem.setParamData(itemParams);
+
         int index = 0;
-        index = tbItemDubboServiceImpl.insTbItemDesc(item, itemDesc);
+        index = tbItemDubboServiceImpl.insTbItemDesc(item, itemDesc, paramItem);
         return index;
     }
 

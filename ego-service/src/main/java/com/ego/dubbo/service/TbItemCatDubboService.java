@@ -15,4 +15,11 @@ public interface TbItemCatDubboService {
      * @return
      */
     List<TbItemCat> show(long pid);
+
+    /**
+     * 根据类目id查询
+     * @param id
+     * @return
+     */
+    TbItemCat selById(long id);
 }
