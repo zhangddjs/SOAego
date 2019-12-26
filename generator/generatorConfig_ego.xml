@@ -21,6 +21,15 @@
                 password="123456">
         </jdbcConnection>
 
+<!--  for my sql 8
+        <jdbcConnection
+                driverClass="com.mysql.cj.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/ego"
+                userId="root"
+                password="123456">
+        </jdbcConnection>
+-->
+
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>

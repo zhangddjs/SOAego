@@ -3,10 +3,10 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ego-commons" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ego-manage" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ego-item" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ego-manage" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ego-pojo" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ego-pojo/ego-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ego-portal" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ego-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ego-service-impl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/generator" charset="UTF-8" />
