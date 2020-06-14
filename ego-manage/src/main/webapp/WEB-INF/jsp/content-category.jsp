@@ -39,7 +39,7 @@ $(function(){
             			});
         				$.messager.alert('提示','创建'+node.text+' 分类成功!');
         			}else{
-        				$.messager.alert('提示','创建'+node.text+' 分类失败!');
+        				$.messager.alert('提示','创建'+node.text+' 分类失败!<br> 原因：' + data.data);
         				_tree.tree("remove",node.target);
         			}
         		});

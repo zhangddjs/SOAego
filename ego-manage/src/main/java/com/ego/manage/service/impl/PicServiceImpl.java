@@ -20,8 +20,10 @@ public class PicServiceImpl implements PicService {
 
     @Value("${ftpclient.host}")
     private String host;
-    @Value("${ftpclient.port}")
-    private int port;
+    @Value("${ftpclient.ftpport}")
+    private int ftpport;
+    @Value("${ftpclient.nginxport}")
+    private int nginxport;
     @Value("${ftpclient.username}")
     private String username;
     @Value("${ftpclient.password}")
@@ -37,11 +39,12 @@ public class PicServiceImpl implements PicService {
     @Override
     public Map<String, Object> upload(MultipartFile file) throws IOException {
         String genImageName = IDUtils.genImageName() + file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
-        boolean result = FtpUtil.uploadFile(host, port, username, password,basepath, filepath, genImageName, file.getInputStream());
+        boolean result = FtpUtil.uploadFile(host, ftpport, username, password,basepath, filepath, genImageName, file.getInputStream());
         Map<String, Object> map = new HashMap<>();
         if (result){
             map.put("error", 0);
-            map.put("url", "http://" + host /*+ ":" + port*/ + "/" + genImageName);
+//            map.put("url", "http://" + host /*+ ":" + port*/ + "/" + genImageName);
+            map.put("url", "http://" + host + ":" + nginxport + "/" + genImageName);
         }else{
             map.put("error", 1);
             map.put("message", "图片上传失败");
