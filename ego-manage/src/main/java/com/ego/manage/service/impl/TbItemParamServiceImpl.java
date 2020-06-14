@@ -5,7 +5,7 @@ import com.ego.commons.pojo.EasyUIDataGrid;
 import com.ego.commons.pojo.EgoResult;
 import com.ego.dubbo.service.TbItemCatDubboService;
 import com.ego.dubbo.service.TbItemParamDubboService;
-import com.ego.manage.com.ego.manage.pojo.TbItemParamChild;
+import com.ego.manage.pojo.TbItemParamChild;
 import com.ego.manage.service.TbItemParamService;
 import com.ego.pojo.TbItemParam;
 import org.springframework.stereotype.Service;

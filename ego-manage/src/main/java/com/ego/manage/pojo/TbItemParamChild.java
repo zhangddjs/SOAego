@@ -1,4 +1,4 @@
-package com.ego.manage.com.ego.manage.pojo;
+package com.ego.manage.pojo;
 
 import com.ego.pojo.TbItemParam;
 

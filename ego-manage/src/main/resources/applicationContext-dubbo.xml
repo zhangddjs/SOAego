@@ -13,7 +13,8 @@
 	<dubbo:application name="dubbo-manage"/>
 	<!-- 配置注册中心  -->
 <!--	<dubbo:registry address="192.168.2.2:2181" protocol="zookeeper" />-->
-	<dubbo:registry address="10.254.56.167:2181" protocol="zookeeper" />
+<!--	<dubbo:registry address="10.254.56.167:2181" protocol="zookeeper" />-->
+	<dubbo:registry address="10.100.13.173:30000" protocol="zookeeper" />
 	<!-- 配置注解扫描 -->
 	<dubbo:annotation package="com.ego.manage.service.impl"/>
 	

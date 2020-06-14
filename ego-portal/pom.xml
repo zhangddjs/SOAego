@@ -29,6 +29,18 @@
             <artifactId>ego-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!-- 依赖commons -->
+        <dependency>
+            <groupId>distribute</groupId>
+            <artifactId>ego-commons</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- ego redis -->
+        <dependency>
+            <groupId>distribute</groupId>
+            <artifactId>ego-redis</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
         <!-- jackson -->
 

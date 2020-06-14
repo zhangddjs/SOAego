@@ -7,13 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ego-service" />
+        <module name="ego-portal" />
         <module name="generator" />
         <module name="ego-pojo" />
-        <module name="ego-manage" />
+        <module name="ego-redis" />
         <module name="ego-service-impl" />
         <module name="ego-item" />
         <module name="ego-commons" />
-        <module name="ego-portal" />
+        <module name="ego-manage" />
       </profile>
     </annotationProcessing>
   </component>

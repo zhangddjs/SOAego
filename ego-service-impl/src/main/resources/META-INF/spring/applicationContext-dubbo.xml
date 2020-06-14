@@ -14,9 +14,11 @@
 	<dubbo:application name="dubbo-ego-service"/>
 	<!-- 配置注册中心  -->
 <!--	<dubbo:registry address="192.168.2.2:2181" protocol="zookeeper" />-->
-	<dubbo:registry address="10.254.56.167:2181" protocol="zookeeper" />
+<!--	<dubbo:registry address="10.254.56.167:2181" protocol="zookeeper" />-->
+	<!-- 远程linux上的docker地址 -->
+	<dubbo:registry address="10.100.13.173:30000" protocol="zookeeper" />
 	<!-- 配置端口 -->
-	<dubbo:protocol name="dubbo" port="20888" />
+	<dubbo:protocol name="dubbo" port="20888" host="10.79.98.175" />
 	<!-- 注册功能 -->
 	<dubbo:service interface="com.ego.dubbo.service.TbItemDubboService" ref="tbItemDubboServiceImpl" />
 	<bean id="tbItemDubboServiceImpl" class="com.ego.dubbo.service.impl.TbItemDubboServiceImpl" />
@@ -29,6 +31,12 @@
 	<!--规格参数-->
 	<dubbo:service interface="com.ego.dubbo.service.TbItemParamDubboService" ref="tbItemParamDubboServiceImpl" />
 	<bean id="tbItemParamDubboServiceImpl" class="com.ego.dubbo.service.impl.TbItemParamDubboServiceImpl" />
+	<!--内容分类-->
+	<dubbo:service interface="com.ego.dubbo.service.TbContentCategoryDubboService" ref="tbContentCategoryDubboServiceImpl" />
+	<bean id="tbContentCategoryDubboServiceImpl" class="com.ego.dubbo.service.impl.TbContentCategoryDubboServiceImpl" />
+	<!--内容-->
+	<dubbo:service interface="com.ego.dubbo.service.TbContentDubboService" ref="tbContentDubboServiceImpl" />
+	<bean id="tbContentDubboServiceImpl" class="com.ego.dubbo.service.impl.TbContentDubboServiceImpl" />
 
 	<import resource="../../applicationContext.xml" />
 </beans>
