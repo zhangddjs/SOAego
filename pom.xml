@@ -17,6 +17,7 @@
         <module>ego-portal</module>
         <module>ego-item</module>
         <module>ego-redis</module>
+        <module>solrj</module>
     </modules>
 
     <packaging>pom</packaging>
