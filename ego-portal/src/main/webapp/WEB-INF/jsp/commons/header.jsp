@@ -14,7 +14,7 @@
 				</ul>
 				<div class="form">
 					<input type="text" class="text" accesskey="s" id="key" autocomplete="off" onkeydown="javascript:if(event.keyCode==13) search('key');">
-					<input type="button" value="搜索" class="button" onclick="javascript:window.location.href='http://localhost:8083/search.html?q=' + encodeURIComponent(document.getElementById('key').value);return false;" clstag="homepage|keycount|home2013|03a">
+					<input type="button" value="搜索" class="button" onclick="javascript:window.location.href='http://localhost:8073/search.html?q=' + encodeURIComponent(document.getElementById('key').value);return false;" clstag="homepage|keycount|home2013|03a">
 				</div>
 			</div>
 			<div id="hotwords" clstag="homepage|keycount|home2013|03b"></div>
