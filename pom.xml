@@ -18,6 +18,7 @@
         <module>ego-item</module>
         <module>ego-redis</module>
         <module>solrj</module>
+        <module>ego-search</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -49,10 +50,17 @@
         <tomcat-version>2.2</tomcat-version>
         <pagehelper-version>5.1.8</pagehelper-version>
         <ftpclient-version>3.3</ftpclient-version>
+        <solr-version>7.5.0</solr-version>
     </properties>
 
     <!--<dependencyManagement>-->
     <dependencies>
+        <!--    solrj    -->
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>${solr-version}</version>
+        </dependency>
         <!-- 分页插件 -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
