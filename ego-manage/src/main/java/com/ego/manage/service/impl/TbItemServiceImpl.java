@@ -12,9 +12,11 @@ import com.ego.pojo.TbItem;
 import com.ego.pojo.TbItemDesc;
 import com.ego.pojo.TbItemParam;
 import com.ego.pojo.TbItemParamItem;
+import com.ego.redis.dao.JedisDao;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +34,12 @@ public class TbItemServiceImpl implements TbItemService {
     @Value("${search.url}")
     private String url;
 
+    @Resource
+    private JedisDao jedisDaoImpl;
+    @Value("${redis.item.key}")
+    private String itemKey;
+
+
     @Override
     public EasyUIDataGrid show(int page, int rows) {
         System.out.println("bbbbbb");
@@ -46,9 +54,14 @@ public class TbItemServiceImpl implements TbItemService {
             tbItem.setId(Long.parseLong(id));
             tbItem.setStatus(status);
             index += tbItemDubboServiceImpl.updItemStatus(tbItem);
+            if(status == 2 || status == 3){
+                jedisDaoImpl.del(itemKey+id);
+            }
         }
-        if(index == idsStr.length)
+        if(index == idsStr.length) {
             return 1;
+        }
+
         return 0;
     }
 

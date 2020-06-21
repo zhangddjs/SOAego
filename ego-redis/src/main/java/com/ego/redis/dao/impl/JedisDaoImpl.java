@@ -29,4 +29,9 @@ public class JedisDaoImpl implements JedisDao {
     public String get(String key) {
         return jedisClients.get(key);
     }
+
+    @Override
+    public Long expire(String key, int seconds) {
+        return jedisClients.expire(key, seconds);
+    }
 }

@@ -12,4 +12,13 @@
 
     <artifactId>ego-commons</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>distribute</groupId>
+            <artifactId>ego-pojo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+
 </project>

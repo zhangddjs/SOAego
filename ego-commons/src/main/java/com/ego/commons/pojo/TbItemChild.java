@@ -1,4 +1,4 @@
-package com.ego.search.pojo;
+package com.ego.commons.pojo;
 
 import com.ego.pojo.TbItem;
 
