@@ -35,7 +35,7 @@
             <artifactId>ego-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!-- 依赖redis -->
+        <!--    redis    -->
         <dependency>
             <groupId>distribute</groupId>
             <artifactId>ego-redis</artifactId>

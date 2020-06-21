@@ -6,8 +6,8 @@ import com.ego.dubbo.service.TbItemDescDubboService;
 import com.ego.dubbo.service.TbItemDubboService;
 import com.ego.pojo.TbItem;
 import com.ego.pojo.TbItemCat;
+import com.ego.commons.pojo.TbItemChild;
 import com.ego.pojo.TbItemDesc;
-import com.ego.search.pojo.TbItemChild;
 import com.ego.search.service.TbItemService;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
@@ -40,6 +40,8 @@ public class TbItemServiceImpl implements TbItemService {
 
     @Override
     public void init() throws IOException, SolrServerException {
+        solrClient.deleteByQuery("*:*");
+        solrClient.commit();
         //查询所有正常的商品
         List<TbItem> listItem = tbItemDubboServiceImpl.selAllByStatus((byte) 1);
         int count = 0;
@@ -50,13 +52,14 @@ public class TbItemServiceImpl implements TbItemService {
             //商品对应的描述信息
             TbItemDesc desc = tbItemDescDubboServiceImpl.selByItemid(item.getId());
             SolrInputDocument doc = new SolrInputDocument();
-            doc.addField("id", item.getId());
-            doc.addField("item_title", item.getTitle());
-            doc.addField("item_sell_point", item.getSellPoint());
-            doc.addField("item_price", item.getPrice());
-            doc.addField("item_image", item.getImage());
-            doc.addField("item_category_name", cat.getName());
-            doc.addField("item_desc", desc.getItemDesc());
+            doc.setField("id", item.getId());
+            doc.setField("item_title", item.getTitle());
+            doc.setField("item_sell_point", item.getSellPoint());
+            doc.setField("item_price", item.getPrice());
+            doc.setField("item_image", item.getImage());
+            doc.setField("item_category_name", cat.getName());
+            doc.setField("item_desc", desc.getItemDesc());
+            doc.setField("item_updated", item.getUpdated());
             solrClient.add(doc);
         }
         solrClient.commit();
@@ -72,6 +75,8 @@ public class TbItemServiceImpl implements TbItemService {
         params.addHighlightField("item_title");
         params.setHighlightSimplePre("<span style='color:red'>");
         params.setHighlightSimplePost("</span>");
+
+        params.setSort("item_updated", SolrQuery.ORDER.desc);
 
         QueryResponse response = solrClient.query(params);
 
