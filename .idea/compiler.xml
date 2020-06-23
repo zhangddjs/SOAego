@@ -6,19 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="solrj" />
-        <module name="ego-service" />
-        <module name="ego-search" />
-        <module name="ego-cart" />
-        <module name="ego-commons" />
-        <module name="ego-pojo" />
-        <module name="ego-redis" />
-        <module name="ego-service-impl" />
-        <module name="ego-manage" />
         <module name="ego-portal" />
+        <module name="ego-redis" />
+        <module name="ego-manage" />
         <module name="ego-item" />
+        <module name="solrj" />
         <module name="ego-passport" />
+        <module name="ego-order" />
+        <module name="ego-service" />
+        <module name="ego-cart" />
+        <module name="ego-pojo" />
+        <module name="ego-commons" />
         <module name="generator" />
+        <module name="ego-service-impl" />
+        <module name="ego-search" />
       </profile>
     </annotationProcessing>
   </component>
