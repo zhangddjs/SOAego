@@ -28,7 +28,7 @@
     <div id="logo"><a href="/"><img src="/images/ego-logo.gif" alt="易购商城"></a></div>
 </div>
 
-<form id="orderForm" class="hide" action="http://localhost:8086/order/create.html" method="post">
+<form id="orderForm" class="hide" action="http://localhost:8077/order/create.html" method="post">
 		<input type="hidden" name="paymentType" value="1"/>
 		<c:forEach items="${cartList }" var="cart" varStatus="status">
 			<c:set var="totalPrice"  value="${ totalPrice + (cart.price * cart.num)}"/>

@@ -18,7 +18,7 @@
 	<!-- 远程linux上的docker地址 -->
 	<dubbo:registry address="10.100.13.173:30000" protocol="zookeeper" />
 	<!-- 配置端口 -->
-	<dubbo:protocol name="dubbo" port="20888" host="10.79.103.113" />
+	<dubbo:protocol name="dubbo" port="20888" host="10.79.97.97" />
 	<!-- 注册功能 -->
 	<dubbo:service interface="com.ego.dubbo.service.TbItemDubboService" ref="tbItemDubboServiceImpl" />
 	<bean id="tbItemDubboServiceImpl" class="com.ego.dubbo.service.impl.TbItemDubboServiceImpl" />
@@ -43,6 +43,9 @@
 	<!--用户-->
 	<dubbo:service interface="com.ego.dubbo.service.TbUserDubboService" ref="tbUserDubboService" />
 	<bean id="tbUserDubboService" class="com.ego.dubbo.service.impl.TbUserDubboServiceImpl" />
+	<!--订单-->
+	<dubbo:service interface="com.ego.dubbo.service.TbOrderDubboService" ref="tbOrderDubboService" />
+	<bean id="tbOrderDubboService" class="com.ego.dubbo.service.impl.TbOrderDubboServiceImpl" />
 
 	<import resource="../../applicationContext.xml" />
 </beans>
