@@ -113,4 +113,21 @@ public class TbOrderShipping implements Serializable {
     public void setUpdated(Date updated) {
         this.updated = updated;
     }
+
+    @Override
+    public String toString() {
+        return "TbOrderShipping{" +
+                "orderId='" + orderId + '\'' +
+                ", receiverName='" + receiverName + '\'' +
+                ", receiverPhone='" + receiverPhone + '\'' +
+                ", receiverMobile='" + receiverMobile + '\'' +
+                ", receiverState='" + receiverState + '\'' +
+                ", receiverCity='" + receiverCity + '\'' +
+                ", receiverDistrict='" + receiverDistrict + '\'' +
+                ", receiverAddress='" + receiverAddress + '\'' +
+                ", receiverZip='" + receiverZip + '\'' +
+                ", created=" + created +
+                ", updated=" + updated +
+                '}';
+    }
 }
