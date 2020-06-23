@@ -137,9 +137,10 @@ public static boolean uploadFile(String host, int port, String username, String 
 	
 	public static void main(String[] args) {
 		try {  
-	        FileInputStream in=new FileInputStream(new File("E:/a.png"));  
-	        boolean flag = uploadFile("192.168.17.129", 21, "ftpuser", "ftpuser", "/home/ftpuser/","/", "abc1.png", in);  
-	        System.out.println(flag);  
+	        FileInputStream in=new FileInputStream(new File("C:\\Users\\dongdzha\\Pictures\\a.jpg"));
+//	        boolean flag = uploadFile("192.168.17.129", 21, "ftpuser", "ftpuser", "/home/ftpuser/","/", "abc1.png", in);
+	        boolean flag = uploadFile("10.100.13.173", 30003, "admin", "admin", "/home/vsftpd/","/", "abc1.jpg", in);
+	        System.out.println(flag);
 	    } catch (FileNotFoundException e) {  
 	        e.printStackTrace();  
 	    }  

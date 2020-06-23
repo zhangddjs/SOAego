@@ -29,6 +29,18 @@
             <artifactId>ego-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!-- 依赖commons -->
+        <dependency>
+            <groupId>distribute</groupId>
+            <artifactId>ego-commons</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- ego redis -->
+        <dependency>
+            <groupId>distribute</groupId>
+            <artifactId>ego-redis</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
         <!-- jackson -->
 
@@ -39,7 +51,7 @@
         <!-- 访问zookeeper的客户端jar -->
     </dependencies>
     <build>
-        <finalName>ego-manage</finalName>
+        <finalName>ego-portal</finalName>
         <resources>
             <resource>
                 <directory>src/main/java</directory>

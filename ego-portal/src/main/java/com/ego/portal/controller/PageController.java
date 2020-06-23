@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PageController {
     @RequestMapping("/")
     public String welcome(){
-        return "index";
+        return "forward:/showBigPic";
     }
 }

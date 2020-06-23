@@ -35,6 +35,12 @@
             <artifactId>ego-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!--    redis    -->
+        <dependency>
+            <groupId>distribute</groupId>
+            <artifactId>ego-redis</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
         <!-- jackson -->
 
