@@ -82,4 +82,18 @@ public class TbOrderItem implements Serializable {
     public void setPicPath(String picPath) {
         this.picPath = picPath == null ? null : picPath.trim();
     }
+
+    @Override
+    public String toString() {
+        return "TbOrderItem{" +
+                "id='" + id + '\'' +
+                ", itemId='" + itemId + '\'' +
+                ", orderId='" + orderId + '\'' +
+                ", num=" + num +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                ", totalFee=" + totalFee +
+                ", picPath='" + picPath + '\'' +
+                '}';
+    }
 }
