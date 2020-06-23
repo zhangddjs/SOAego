@@ -16,6 +16,11 @@
         <module>ego-manage</module>
         <module>ego-portal</module>
         <module>ego-item</module>
+        <module>ego-redis</module>
+        <module>solrj</module>
+        <module>ego-search</module>
+        <module>ego-passport</module>
+        <module>ego-cart</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -40,17 +45,25 @@
         <mysql-connector-java-version>8.0.11</mysql-connector-java-version>
         <jackson-version>2.8.3</jackson-version>
         <commons-fileupload-version>1.3.1</commons-fileupload-version>
-        <jedis-version>2.8.1</jedis-version>
+        <jedis-version>3.3.0</jedis-version>
         <dubbo-version>2.5.3</dubbo-version>
 <!--        <dubbo-version>2.5.4</dubbo-version>-->
         <zkClient-version>0.10</zkClient-version>
         <tomcat-version>2.2</tomcat-version>
         <pagehelper-version>5.1.8</pagehelper-version>
         <ftpclient-version>3.3</ftpclient-version>
+        <solr-version>7.5.0</solr-version>
+        <slf4j-version>1.7.25</slf4j-version>
     </properties>
 
     <!--<dependencyManagement>-->
     <dependencies>
+        <!--    solrj    -->
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>${solr-version}</version>
+        </dependency>
         <!-- 分页插件 -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
@@ -130,6 +143,12 @@
             <groupId>com.mchange</groupId>
             <artifactId>c3p0</artifactId>
             <version>0.9.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- mybatis -->
@@ -212,9 +231,9 @@
         </dependency>
 
         <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-            <version>1.3.1</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>${slf4j-version}</version>
         </dependency>
 
     </dependencies>
