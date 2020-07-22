@@ -209,4 +209,21 @@ public class redisTest {
             }
         }
     }
+
+    @Test
+    @Ignore
+    public void testarray( int[] arr, int target){
+
+        int low = 0, high = arr.length - 1, mid, protate;
+        while(low < high) {
+            mid = low + (high - low) / 2;
+            if(arr[mid] < arr[low]) high = mid;
+            else if(arr[mid] > arr[high]) low = mid + 1;
+        }
+        protate = high;
+
+
+    }
+
+
 }

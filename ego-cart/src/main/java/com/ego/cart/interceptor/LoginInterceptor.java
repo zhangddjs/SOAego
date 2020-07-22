@@ -23,14 +23,14 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         String token = CookieUtils.getCookieValue(httpServletRequest, "TT_TOKEN");
         if(token != null && !token.equals("")){
-            String json = HttpClientUtil.doPost("http://localhost:8075/user/token/" + token);
+            String json = HttpClientUtil.doPost("http://passport.ego.com/user/token/" + token);
             EgoResult er = JsonUtils.jsonToPojo(json, EgoResult.class);
             if(er.getStatus() == 200){
                 return true;
             }
         }
         String num = httpServletRequest.getParameter("num");
-        httpServletResponse.sendRedirect("http://localhost:8075/user/showLogin?interurl="+httpServletRequest.getRequestURL()+"%3Fnum=" + num);
+        httpServletResponse.sendRedirect("http://passport.ego.com/user/showLogin?interurl="+httpServletRequest.getRequestURL()+"%3Fnum=" + num);
         return false;
     }
 
