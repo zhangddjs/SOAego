@@ -15,8 +15,8 @@
     <!-- 注解扫描 -->
     <context:component-scan base-package="com.ego.dubbo.service.impl" />
     <!-- 加载属性文件 -->
-    <context:property-placeholder location="classpath:db.properties"/>
-    <!-- 数据源 -->
+	<context:property-placeholder location="${env.config.path.type}:${env.config.path}*.properties"/>
+	<!-- 数据源 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
     	<property name="driverClass" value="${jdbc.driver}" />
     	<property name="jdbcUrl" value="${jdbc.url}" />

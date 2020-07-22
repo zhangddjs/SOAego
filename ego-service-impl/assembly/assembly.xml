@@ -19,14 +19,19 @@
 		<format>tar.gz</format>
 	</formats>
 	<includeBaseDirectory>true</includeBaseDirectory>
+	<!-- profile替换实在编译阶段完成的，使用assembly插件打包时，不能再从src/main/resources下查找文件，而应该从target/classes下面查找配置文件 -->
 	<fileSets>
 		<fileSet>
 			<directory>assembly/bin</directory>
 			<outputDirectory>bin</outputDirectory>
 			<fileMode>0755</fileMode>
+			<lineEnding>unix</lineEnding>
 		</fileSet>
 		<fileSet>
-			<directory>assembly/conf</directory>
+			<directory>${project.build.directory}/classes</directory>
+			<includes>
+				<include>*.properties</include>
+			</includes>
 			<outputDirectory>conf</outputDirectory>
 			<fileMode>0644</fileMode>
 		</fileSet>
