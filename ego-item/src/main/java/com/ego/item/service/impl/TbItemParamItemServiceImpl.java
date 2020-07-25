@@ -1,13 +1,13 @@
 package com.ego.item.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.alibaba.dubbo.config.annotation.Service;
 import com.ego.commons.utils.JsonUtils;
 import com.ego.dubbo.service.TbItemParamItemDubboService;
 import com.ego.item.pojo.ParamItem;
 import com.ego.item.pojo.ParamNode;
 import com.ego.item.service.TbItemParamItemService;
 import com.ego.pojo.TbItemParamItem;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
