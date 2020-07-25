@@ -41,6 +41,7 @@ public class PicServiceImpl implements PicService {
         String genImageName = IDUtils.genImageName() + file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
         boolean result = FtpUtil.uploadFile(host, ftpport, username, password,basepath, filepath, genImageName, file.getInputStream());
         Map<String, Object> map = new HashMap<>();
+        System.out.println(host+ftpport+username+password+basepath+filepath);
         if (result){
             map.put("error", 0);
 //            map.put("url", "http://" + host /*+ ":" + port*/ + "/" + genImageName);

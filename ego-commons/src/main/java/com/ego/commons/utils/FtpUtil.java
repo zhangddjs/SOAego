@@ -40,7 +40,9 @@ public static boolean uploadFile(String host, int port, String username, String 
 			// 如果采用默认端口，可以使用ftp.connect(host)的方式直接连接FTP服务器
 			ftp.login(username, password);// 登录
 			reply = ftp.getReplyCode();
+			System.out.println("reply code: " + reply);
 			if (!FTPReply.isPositiveCompletion(reply)) {
+				System.out.println("ftp disconnect");
 				ftp.disconnect();
 				return result;
 			}
@@ -52,8 +54,10 @@ public static boolean uploadFile(String host, int port, String username, String 
 				for (String dir : dirs) {
 					if (null == dir || "".equals(dir)) continue;
 					tempPath += "/" + dir;
+					System.out.println("temp path: "+ tempPath);
 					if (!ftp.changeWorkingDirectory(tempPath)) {
 						if (!ftp.makeDirectory(tempPath)) {
+							System.out.println("makeDirectory fail");
 							return result;
 						} else {
 							ftp.changeWorkingDirectory(tempPath);
@@ -65,6 +69,7 @@ public static boolean uploadFile(String host, int port, String username, String 
 			ftp.setFileType(FTP.BINARY_FILE_TYPE);
 			//上传文件
 			if (!ftp.storeFile(filename, input)) {
+				System.out.println("store file fail");
 				return result;
 			}
 			input.close();

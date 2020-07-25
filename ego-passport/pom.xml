@@ -69,6 +69,9 @@
                         <!--                    <port>80</port>-->
                         <port>8075</port>
                         <path>/</path>
+                        <username>tomcat</username>
+                        <password>tomcat</password>
+                        <url>http://10.100.13.173:38086/manager/text</url>
                     </configuration>
                 </plugin>
                 <plugin>

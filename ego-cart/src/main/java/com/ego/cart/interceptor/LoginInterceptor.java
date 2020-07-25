@@ -30,7 +30,10 @@ public class LoginInterceptor implements HandlerInterceptor {
             }
         }
         String num = httpServletRequest.getParameter("num");
-        httpServletResponse.sendRedirect("http://passport.ego.com:30080/user/showLogin?interurl="+httpServletRequest.getRequestURL()+"%3Fnum=" + num);
+        StringBuffer interurl = httpServletRequest.getRequestURL();
+        interurl.insert(interurl.indexOf("/" ,8), ":30080");
+        System.out.println(interurl);
+        httpServletResponse.sendRedirect("http://passport.ego.com:30080/user/showLogin?interurl="+interurl+"%3Fnum=" + num);
         return false;
     }
 
