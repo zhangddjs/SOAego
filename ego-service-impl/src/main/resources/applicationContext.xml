@@ -22,6 +22,14 @@
     	<property name="jdbcUrl" value="${jdbc.url}" />
     	<property name="user" value="${jdbc.username}" />
     	<property name="password" value="${jdbc.password}" />
+
+		<property name="maxPoolSize" value="${jdbc.maxpoolsize}" />
+		<property name="minPoolSize" value="${jdbc.minpoolsize}" />
+		<property name="initialPoolSize" value="${jdbc.initialpoolsize}" />
+		<property name="maxIdleTime" value="${jdbc.maxidletime}" />
+
+		<property name="preferredTestQuery" value="select 1 from dual" />
+
     </bean>
     <!-- SqlSessionFactory -->
     <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
