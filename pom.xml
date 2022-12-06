@@ -52,7 +52,7 @@
         <zkClient-version>0.10</zkClient-version>
         <tomcat-version>2.2</tomcat-version>
         <pagehelper-version>5.1.8</pagehelper-version>
-        <ftpclient-version>3.3</ftpclient-version>
+        <ftpclient-version>3.9.0</ftpclient-version>
         <solr-version>7.5.0</solr-version>
         <slf4j-version>1.7.25</slf4j-version>
     </properties>
